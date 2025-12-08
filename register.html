@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup | ElectroKart</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="auth-page">
         <div style="margin-bottom: 2rem;">
-             <a href="index.html" class="logo" style="color: var(--bg-graphite);">
-                <svg class="logo-icon" viewBox="0 0 24 24" style="fill: var(--primary-color);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                <div class="logo-text-wrapper" style="color: var(--text-dark);">
+             <a href="index.html" class="logo auth-logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper">
                     ElectroKart
                     <span>Future Tech</span>
                 </div>
@@ -20,11 +21,11 @@
         </div>
         <div class="auth-container">
             <div class="auth-banner">
-                <div>
-                    <h2>Looks like you're new here!</h2>
-                    <p style="margin-top: 1rem; opacity: 0.9;">Sign up with your mobile number to get started</p>
+                <div class="auth-banner-content">
+                    <h2 class="auth-title">Looks like you're new here!</h2>
+                    <p class="auth-subtitle">Sign up with your mobile number to get started</p>
                 </div>
-                 <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" style="width: 100%;">
+                 <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" class="auth-banner-img">
             </div>
             <div class="auth-form-container">
                 <form id="registerForm" style="display: flex; flex-direction: column; gap: 1.5rem;">

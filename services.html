@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products | ElectroKart</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -56,14 +57,22 @@
     </header>
 
     <main class="container section">
-        <div class="flex justify-between items-center" style="margin-bottom: 2rem;">
-            <h2>Mobiles & Electronics</h2>
-            <div style="font-size: 0.9rem; color: var(--text-light);">Showing 1-12 of 104 results</div>
+        <div class="products-header-section" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <h2 style="margin: 0;">Mobiles & Electronics</h2>
+                <div style="font-size: 0.9rem; color: var(--text-light);">Showing 1-12 of 104 results</div>
+            </div>
+            <button class="filter-toggle-btn" style="padding: 0.75rem; background: var(--primary-color); color: white; border: none; border-radius: 50%; width: 48px; height: 48px; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+                </svg>
+                <span class="filter-toggle-text" style="display: none;">Show Filters</span>
+            </button>
         </div>
 
         <div class="services-container">
             <!-- Sidebar Filter -->
-            <aside class="filters-sidebar">
+            <aside class="filters-sidebar" id="filtersSidebar">
                 <h3 style="font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem;">Filters</h3>
                 
                 <div style="margin-bottom: 1.5rem;">
@@ -90,6 +99,11 @@
                         <li><label><input type="checkbox"> 4★ & above</label></li>
                         <li><label><input type="checkbox"> 3★ & above</label></li>
                     </ul>
+                </div>
+
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                    <button class="btn btn-primary" style="width: 100%;">Apply Filters</button>
+                    <button class="btn btn-white" style="width: 100%; margin-top: 0.5rem; box-shadow: var(--shadow-sm);">Clear All</button>
                 </div>
             </aside>
 

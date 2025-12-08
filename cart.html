@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart | ElectroKart</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -56,9 +57,9 @@
     </header>
 
     <main class="container section">
-        <h2 style="margin-bottom: 2rem;">My Cart</h2>
+        <h2 class="text-center" style="margin-bottom: 2rem;">My Cart</h2>
         
-        <div class="cart-layout">
+        <div class="cart-layout cart-centered">
             <div class="cart-items-container" id="cart-items">
                 <!-- Cart items will be injected here via JS -->
                 <div style="text-align: center; padding: 4rem;">
@@ -89,7 +90,7 @@
                     You will save money on this order
                 </div>
                 <div style="text-align: center;">
-                    <button class="btn btn-accent" style="width: 100%;">PLACE ORDER</button>
+                    <button class="btn btn-accent place-order-btn">PLACE ORDER</button>
                 </div>
             </div>
         </div>

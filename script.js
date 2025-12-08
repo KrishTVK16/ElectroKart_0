@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹35,999",
             discount: "19% off",
             rating: "4.4 ★",
-            img: "https://www.pngall.com/wp-content/uploads/2016/04/Camera-Free-Download-PNG.png",
+            img: "Canon EOS 3000D.png",
             specs: {
                 "Sensor": "APS-C CMOS Sensor with 18 MP",
                 "ISO": "100-6400 sensitivity range",
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹34,990",
             discount: "23% off",
             rating: "4.8 ★",
-            img: "https://www.pngall.com/wp-content/uploads/4/Headphone-PNG-File.png",
+            img: "Sony WH-1000XM5.png",
             specs: {
                 "Type": "Over Ear, Wireless",
                 "ANC": "Industry Leading Noise Cancellation",
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹1,19,900",
             discount: "25% off",
             rating: "4.9 ★",
-            img: "https://www.pngall.com/wp-content/uploads/13/Apple-MacBook-Air-PNG-Free-Download.png",
+            img: "MacBook Air M2.png",
             specs: {
                 "Processor": "Apple M2 Chip",
                 "RAM": "8 GB Unified Memory",
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹29,999",
             discount: "50% off",
             rating: "4.3 ★",
-            img: "https://www.pngall.com/wp-content/uploads/14/Samsung-Galaxy-Watch-Active-2-PNG-Photos.png",
+            img: "Galaxy Watch 5.png",
             specs: {
                 "Display": "Super AMOLED",
                 "Sensors": "BioActive Sensor",
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹69,900",
             discount: "18% off",
             rating: "4.6 ★",
-            img: "https://www.pngall.com/wp-content/uploads/13/iPhone-14-PNG-Cutout.png",
+            img: "iPhone 14.png",
             specs: {
                 "Display": "6.1 inch Super Retina XDR",
                 "Camera": "12MP + 12MP | 12MP Front",
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹79,999",
             discount: "5% off",
             rating: "4.5 ★",
-            img: "https://www.pngall.com/wp-content/uploads/13/Samsung-Galaxy-S23-Ultra-PNG-Cutout.png",
+            img: "Samsung Galaxy S23.png",
             specs: {
                 "Display": "Dynamic AMOLED 2X",
                 "Camera": "50MP Triple Camera",
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹24,900",
             discount: "10% off",
             rating: "4.8 ★",
-            img: "https://www.pngall.com/wp-content/uploads/4/Headphone-PNG-File.png",
+            img: "Bose QuietComfort 45.png",
             specs: {
                 "Type": "Over Ear Noise Cancelling",
                 "Modes": "Quiet and Aware Modes",
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹1,29,900",
             discount: "0% off",
             rating: "4.9 ★",
-            img: "https://www.pngall.com/wp-content/uploads/13/Apple-MacBook-Pro-PNG-Cutout.png",
+            img: "MacBook Pro M2.png",
             specs: {
                 "Processor": "Apple M2 Pro",
                 "RAM": "16 GB Unified Memory",
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹45,900",
             discount: "8% off",
             rating: "4.7 ★",
-            img: "https://www.pngall.com/wp-content/uploads/15/Apple-Watch-Ultra-PNG-File.png",
+            img: "Apple Watch Ultra.png",
             specs: {
                 "Case": "49mm Titanium Case",
                 "GPS": "Precision Dual-frequency GPS",
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             originalPrice: "₹59,900",
             discount: "5% off",
             rating: "4.8 ★",
-            img: "https://www.pngall.com/wp-content/uploads/13/iPad-PNG-Image.png",
+            img: "iPad Air 5th Gen.png",
             specs: {
                 "Processor": "Apple M1 Chip",
                 "Display": "10.9 inch Liquid Retina",
@@ -333,6 +333,45 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = JSON.parse(localStorage.getItem('electroCart')) || [];
     const cartCountEl = document.getElementById('cart-count');
 
+    // Map product IDs to local image paths
+    const productImageMap = {
+        "cam1": "Canon EOS 3000D.png",
+        "head1": "Sony WH-1000XM5.png",
+        "mac1": "MacBook Air M2.png",
+        "watch1": "Galaxy Watch 5.png",
+        "iphone14": "iPhone 14.png",
+        "s23": "Samsung Galaxy S23.png",
+        "bose": "Bose QuietComfort 45.png",
+        "macpro": "MacBook Pro M2.png",
+        "iwatch": "Apple Watch Ultra.png",
+        "ipad": "iPad Air 5th Gen.png"
+    };
+
+    // Function to get local image path from product ID or image URL
+    function getLocalImagePath(id, imgUrl) {
+        // First check if we have a mapping for this product ID
+        if (productImageMap[id]) {
+            return productImageMap[id];
+        }
+        // If image URL is already a local path, return it
+        if (imgUrl && !imgUrl.startsWith('http')) {
+            return imgUrl;
+        }
+        // Try to extract filename from URL and map it
+        if (imgUrl) {
+            const urlParts = imgUrl.split('/');
+            const filename = urlParts[urlParts.length - 1];
+            // Check if we can find a matching local file
+            for (const [pid, localImg] of Object.entries(productImageMap)) {
+                if (localImg.toLowerCase().includes(filename.toLowerCase().replace('.png', '').replace('-', ' '))) {
+                    return localImg;
+                }
+            }
+        }
+        // Fallback to original image URL if no mapping found
+        return imgUrl || '';
+    }
+
     function updateCartCount() {
         // Count total items including quantities
         const count = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
@@ -343,21 +382,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveCart() {
+        // Update all cart items to use local images before saving
+        cart = cart.map(item => ({
+            ...item,
+            img: getLocalImagePath(item.id, item.img)
+        }));
         localStorage.setItem('electroCart', JSON.stringify(cart));
         updateCartCount();
     }
 
     window.addToCart = function(id, title, price, img) {
+        // Convert image to local path
+        const localImg = getLocalImagePath(id, img);
+        
         // Check if item exists
         const existingItem = cart.find(item => item.id === id);
         
         if (existingItem) {
-            // Increment quantity if exists
+            // Increment quantity if exists and update image if needed
             existingItem.quantity = (existingItem.quantity || 1) + 1;
+            existingItem.img = localImg; // Update image path
             alert(`Quantity updated! You now have ${existingItem.quantity} of this item in your cart.`);
         } else {
-            // Add new item with quantity 1
-            cart.push({ id, title, price, img, quantity: 1 });
+            // Add new item with quantity 1 and local image
+            cart.push({ id, title, price, img: localImg, quantity: 1 });
             alert('Item added to cart successfully!');
         }
         
@@ -420,9 +468,12 @@ document.addEventListener('DOMContentLoaded', () => {
             total += priceNum * qty;
             totalQty += qty;
 
+            // Ensure we use local image path
+            const localImg = getLocalImagePath(item.id, item.img);
+
             html += `
                 <div class="cart-item">
-                    <img src="${item.img}" alt="${item.title}" class="cart-item-img">
+                    <img src="${localImg}" alt="${item.title}" class="cart-item-img" onerror="this.src='${item.img || ''}'">
                     <div class="cart-item-details">
                         <div class="cart-item-title">${item.title}</div>
                         <div class="cart-item-price">${item.price}</div>
@@ -458,7 +509,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize
+    /* --- Filter Toggle Button --- */
+    const filterToggleBtn = document.querySelector('.filter-toggle-btn');
+    const filtersSidebar = document.getElementById('filtersSidebar');
+    
+    if (filterToggleBtn && filtersSidebar) {
+        filterToggleBtn.addEventListener('click', () => {
+            filtersSidebar.classList.toggle('active');
+            // Toggle button style when filters are active
+            if (filtersSidebar.classList.contains('active')) {
+                filterToggleBtn.style.background = 'var(--accent-color)';
+            } else {
+                filterToggleBtn.style.background = 'var(--primary-color)';
+            }
+        });
+    }
+
+    // Initialize - Update existing cart items to use local images
+    if (cart.length > 0) {
+        cart = cart.map(item => ({
+            ...item,
+            img: getLocalImagePath(item.id, item.img)
+        }));
+        saveCart();
+    }
+    
     updateCartCount();
     renderCartPage();
 });
