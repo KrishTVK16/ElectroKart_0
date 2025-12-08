@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | ElectroKart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper">
+                    ElectroKart
+                    <span>Future Tech</span>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for products...">
+                <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <nav class="nav-menu">
+                <div class="dropdown">
+                    <span class="nav-link">Home ▾</span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Hub</a>
+                        <a href="home-alt.html" class="dropdown-item">Premium Hub</a>
+                    </div>
+                </div>
+                <a href="services.html" class="nav-link active">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-btn btn-white">Login</a>
+                <a href="register.html" class="nav-btn btn-primary-sm">Sign Up</a>
+            </nav>
+            <!--<a href="cart.html" class="icon-btn" title="Cart">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <span id="cart-count" class="header-cart-count">0</span>
+            </a>-->
+            <div class="mobile-buttons-group">
+                <button class="mobile-search-toggle">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </button>
+                <button class="theme-toggle" title="Toggle Dark Mode">◑</button>
+                <a href="cart.html" class="icon-btn" title="Cart">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <span id="cart-count" class="header-cart-count">0</span>
+                </a>
+                <button class="mobile-menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="flex justify-between items-center" style="margin-bottom: 2rem;">
+            <h2>Mobiles & Electronics</h2>
+            <div style="font-size: 0.9rem; color: var(--text-light);">Showing 1-12 of 104 results</div>
+        </div>
+
+        <div class="services-container">
+            <!-- Sidebar Filter -->
+            <aside class="filters-sidebar">
+                <h3 style="font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem;">Filters</h3>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Categories</h4>
+                    <ul style="font-size: 0.9rem; color: #555; line-height: 2;">
+                        <li><label><input type="checkbox"> Mobiles</label></li>
+                        <li><label><input type="checkbox"> Laptops</label></li>
+                        <li><label><input type="checkbox"> Cameras</label></li>
+                        <li><label><input type="checkbox"> Accessories</label></li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Price</h4>
+                    <input type="range" min="0" max="100000" style="width: 100%;">
+                    <div class="flex justify-between" style="font-size: 0.8rem; margin-top: 0.5rem;">
+                        <span>Min</span><span>Max</span>
+                    </div>
+                </div>
+
+                 <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Customer Ratings</h4>
+                    <ul style="font-size: 0.9rem; color: #555; line-height: 2;">
+                        <li><label><input type="checkbox"> 4★ & above</label></li>
+                        <li><label><input type="checkbox"> 3★ & above</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <div class="products-grid-container">
+                <div class="card-grid">
+                     <!-- Product 1 -->
+                     <div class="product-card">
+                        <a href="service-detail.html?id=iphone14" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="iPhone 14.png" class="prod-img" alt="iPhone 14">
+                            <h3 class="prod-title">Apple iPhone 14</h3>
+                            <div class="rating-badge">4.6 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹56,999</span>
+                                <span class="discount">15% off</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn" 
+                                data-id="iphone14" data-title="Apple iPhone 14 (Blue, 128 GB)" data-price="₹56,999" data-img="https://www.pngall.com/wp-content/uploads/13/iPhone-14-PNG-Cutout.png">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <a href="service-detail.html?id=s23" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="Samsung Galaxy S23.png" class="prod-img" alt="Samsung S23">
+                            <h3 class="prod-title">Samsung Galaxy S23</h3>
+                            <div class="rating-badge">4.5 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹74,999</span>
+                                <span class="discount">5% off</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn"
+                                data-id="s23" data-title="Samsung Galaxy S23 5G" data-price="₹74,999" data-img="https://www.pngall.com/wp-content/uploads/13/Samsung-Galaxy-S23-Ultra-PNG-Cutout.png">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <a href="service-detail.html?id=bose" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="Bose QuietComfort 45.png" class="prod-img" alt="Bose QC">
+                            <h3 class="prod-title">Bose QuietComfort 45</h3>
+                            <div class="rating-badge">4.8 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹19,900</span>
+                                <span class="discount">10% off</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn"
+                                data-id="bose" data-title="Bose QuietComfort 45" data-price="₹19,900" data-img="https://www.pngall.com/wp-content/uploads/4/Headphone-PNG-File.png">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <a href="service-detail.html?id=macpro" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="MacBook Pro M2.png" class="prod-img" alt="Macbook Pro">
+                            <h3 class="prod-title">MacBook Pro M2</h3>
+                            <div class="rating-badge">4.9 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹1,29,900</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn"
+                                data-id="macpro" data-title="Apple MacBook Pro M2" data-price="₹1,29,900" data-img="https://www.pngall.com/wp-content/uploads/13/Apple-MacBook-Pro-PNG-Cutout.png">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <a href="service-detail.html?id=iwatch" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="Apple Watch Ultra.png" class="prod-img" alt="Apple Watch">
+                            <h3 class="prod-title">Apple Watch Ultra</h3>
+                            <div class="rating-badge">4.7 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹41,900</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn"
+                                data-id="iwatch" data-title="Apple Watch Series 9" data-price="₹41,900" data-img="https://www.pngall.com/wp-content/uploads/15/Apple-Watch-Ultra-PNG-File.png">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product-card">
+                        <a href="service-detail.html?id=ipad" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+                            <img src="iPad Air 5th Gen.png" class="prod-img" alt="iPad Air">
+                            <h3 class="prod-title">iPad Air 5th Gen</h3>
+                            <div class="rating-badge">4.8 ★</div>
+                            <div class="price-row">
+                                <span class="current-price">₹54,900</span>
+                                <span class="discount">5% off</span>
+                            </div>
+                        </a>
+                        <button class="btn btn-yellow add-to-cart-btn"
+                                data-id="ipad" data-title="Apple iPad Air (5th Gen)" data-price="₹54,900" data-img="https://www.pngall.com/wp-content/uploads/13/iPad-PNG-Image.png">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Standardized Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <div class="logo-text-wrapper">
+                            ElectroKart
+                            <span>Future Tech</span>
+                        </div>
+                    </div>
+                    <p style="color: #b0bec5; margin-bottom: 1rem;">Your destination for premium electronics and futuristic gadgets.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">All Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Payment Issues</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: support@electrokart.com</li>
+                        <li>Phone: +91 1800-123-456</li>
+                        <li>Bangalore, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ElectroKart. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

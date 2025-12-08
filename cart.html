@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart | ElectroKart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper">
+                    ElectroKart
+                    <span>Future Tech</span>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for products...">
+                <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <nav class="nav-menu">
+                <div class="dropdown">
+                    <span class="nav-link">Home ▾</span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Hub</a>
+                        <a href="home-alt.html" class="dropdown-item">Premium Hub</a>
+                    </div>
+                </div>
+                <a href="services.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-btn btn-white">Login</a>
+                <a href="register.html" class="nav-btn btn-primary-sm">Sign Up</a>
+            </nav>
+            <!--<a href="cart.html" class="icon-btn" title="Cart" style="color: var(--primary-color);">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <span id="cart-count" class="header-cart-count">0</span>
+            </a>-->
+            <div class="mobile-buttons-group">
+                <button class="mobile-search-toggle">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </button>
+                <button class="theme-toggle" title="Toggle Dark Mode">◑</button>
+                <a href="cart.html" class="icon-btn" title="Cart" style="color: var(--primary-color);">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <span id="cart-count" class="header-cart-count">0</span>
+                </a>
+                <button class="mobile-menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <h2 style="margin-bottom: 2rem;">My Cart</h2>
+        
+        <div class="cart-layout">
+            <div class="cart-items-container" id="cart-items">
+                <!-- Cart items will be injected here via JS -->
+                <div style="text-align: center; padding: 4rem;">
+                    <h3 style="margin-bottom: 1rem;">Your cart is empty!</h3>
+                    <a href="services.html" class="btn btn-primary">Start Shopping</a>
+                </div>
+            </div>
+
+            <div class="price-details">
+                <h3 style="margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee;">Price Details</h3>
+                <div class="price-row-item" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                    <span>Price (<span id="total-items">0</span> items)</span>
+                    <span id="total-price">₹0</span>
+                </div>
+                <div class="price-row-item" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                    <span>Discount</span>
+                    <span style="color: var(--success-color);">− ₹0</span>
+                </div>
+                <div class="price-row-item" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                    <span>Delivery Charges</span>
+                    <span style="color: var(--success-color);">Free</span>
+                </div>
+                <div class="total-amount-row" style="display:flex; justify-content:space-between; border-top: 1px dashed #ddd; border-bottom: 1px dashed #ddd; padding: 1rem 0; margin: 1rem 0; font-weight:700; font-size: 1.2rem;">
+                    <span>Total Amount</span>
+                    <span id="final-price">₹0</span>
+                </div>
+                <div style="margin-top: 1rem; color: var(--success-color); font-weight: 600; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    You will save money on this order
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn btn-accent" style="width: 100%;">PLACE ORDER</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Standardized Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <div class="logo-text-wrapper">
+                            ElectroKart
+                            <span>Future Tech</span>
+                        </div>
+                    </div>
+                    <p style="color: #b0bec5; margin-bottom: 1rem;">Your destination for premium electronics and futuristic gadgets.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">All Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Payment Issues</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: support@electrokart.com</li>
+                        <li>Phone: +91 1800-123-456</li>
+                        <li>Bangalore, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ElectroKart. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroKart Premium | Modern Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific Overrides for Premium Page */
+        body { background-color: #1a1c20; color: white; }
+        .premium-card { background: #2d3436; border: 1px solid #444; }
+        .premium-card:hover { border-color: var(--primary-color); box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+        h1, h2, h3, p { color: white; }
+    </style>
+</head>
+<body>
+    <!-- Standardized Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper">
+                    ElectroKart
+                    <span>Future Tech</span>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for premium gear...">
+                <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <nav class="nav-menu">
+                <div class="dropdown">
+                    <span class="nav-link active">Home ▾</span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Classic Hub</a>
+                        <a href="home-alt.html" class="dropdown-item">Premium Hub</a>
+                    </div>
+                </div>
+                <a href="services.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-btn btn-white">Login</a>
+                <a href="register.html" class="nav-btn btn-primary-sm">Sign Up</a>
+            </nav>
+            <!--<a href="cart.html" class="icon-btn" title="Cart">
+                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <span id="cart-count" class="header-cart-count">0</span>
+            </a>-->
+            <div class="mobile-buttons-group">
+                <button class="mobile-search-toggle">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                </button>
+                <button class="theme-toggle" title="Toggle Dark Mode">◑</button>
+                <a href="cart.html" class="icon-btn" title="Cart">
+                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <span id="cart-count" class="header-cart-count">0</span>
+                </a>
+                <button class="mobile-menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container section" style="text-align: center; min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding: 4rem 0;">
+            <h1 style="font-size: 4rem; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, #999); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Future is Here.</h1>
+            <p style="color: #b0bec5; font-size: 1.5rem; max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.1rem; line-height: 1.8;">Experience cutting-edge technology designed for the elite.</p>
+            <div style="text-align: center;">
+                <a href="services.html" class="btn btn-primary" style="padding: 1rem 4rem; font-size: 1.2rem;">Pre-Order Now</a>
+            </div>
+        </div>
+        <section class="container" style="padding: 4rem 0;">
+            <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
+                    <img src="VR Headset.png" style="height: 180px; margin: 0 auto 2rem; filter: drop-shadow(0 0 30px rgba(0,229,255,0.2));" alt="VR Headset">
+                    <h3>VR Experience</h3>
+                    <p style="color: #b0bec5;">Immerse yourself in virtual worlds.</p>
+                </div>
+                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
+                    <img src="Pro Gaming.png" style="height: 180px; margin: 0 auto 2rem;" alt="Gaming">
+                    <h3>Pro Gaming</h3>
+                    <p style="color: #b0bec5;">Consoles and accessories for the ultimate win.</p>
+                </div>
+                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
+                    <img src="Aerial Tech.png" style="height: 180px; margin: 0 auto 2rem;" alt="Drones">
+                    <h3>Aerial Tech</h3>
+                    <p style="color: #b0bec5;">Capture the world from 4k heights.</p>
+                </div>
+                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
+                    <img src="Smart Home.png" style="height: 180px; margin: 0 auto 2rem;" alt="Robotics">
+                    <h3>Smart Home</h3>
+                    <p style="color: #b0bec5;">Automation that simplifies your life.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Standardized Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <div class="logo-text-wrapper">
+                            ElectroKart
+                            <span>Future Tech</span>
+                        </div>
+                    </div>
+                    <p style="color: #b0bec5; margin-bottom: 1rem;">Your destination for premium electronics and futuristic gadgets.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">All Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Payment Issues</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: support@electrokart.com</li>
+                        <li>Phone: +91 1800-123-456</li>
+                        <li>Bangalore, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ElectroKart. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

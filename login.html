@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ElectroKart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div style="margin-bottom: 2rem;">
+            <a href="index.html" class="logo" style="color: var(--bg-graphite);">
+                <svg class="logo-icon" viewBox="0 0 24 24" style="fill: var(--primary-color);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper" style="color: var(--text-dark);">
+                    ElectroKart
+                    <span>Future Tech</span>
+                </div>
+            </a>
+        </div>
+        <div class="auth-container">
+            <div class="auth-banner">
+                <div>
+                    <h2>Login</h2>
+                    <p style="margin-top: 1rem; opacity: 0.9;">Get access to your Orders, Wishlist and Recommendations</p>
+                </div>
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" style="width: 100%;">
+            </div>
+            <div class="auth-form-container">
+                <form id="loginForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="display: flex; flex-direction: column;">
+                        <input type="email" placeholder="Enter Email/Mobile number" required>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column;">
+                         <input type="password" placeholder="Enter Password" required>
+                         <a href="#" style="align-self: flex-end; font-size: 0.85rem; color: var(--primary-dark); margin-top: 0.5rem; font-weight: 500;">Forgot?</a>
+                    </div>
+                    
+                    <p style="font-size: 0.85rem; color: #878787;">By continuing, you agree to ElectroKart's Terms of Use and Privacy Policy.</p>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="register.html" style="color: var(--primary-dark); font-weight: 600;">New to ElectroKart? Create an account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | ElectroKart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div style="margin-bottom: 2rem;">
+             <a href="index.html" class="logo" style="color: var(--bg-graphite);">
+                <svg class="logo-icon" viewBox="0 0 24 24" style="fill: var(--primary-color);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <div class="logo-text-wrapper" style="color: var(--text-dark);">
+                    ElectroKart
+                    <span>Future Tech</span>
+                </div>
+            </a>
+        </div>
+        <div class="auth-container">
+            <div class="auth-banner">
+                <div>
+                    <h2>Looks like you're new here!</h2>
+                    <p style="margin-top: 1rem; opacity: 0.9;">Sign up with your mobile number to get started</p>
+                </div>
+                 <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" style="width: 100%;">
+            </div>
+            <div class="auth-form-container">
+                <form id="registerForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <input type="text" placeholder="Enter Mobile number" required>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Continue</button>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="button" class="btn btn-white" style="width: 100%; box-shadow: var(--shadow-sm); color: var(--primary-dark); border: 1px solid #eee;">Existing User? Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.btn-white').addEventListener('click', () => window.location.href = 'login.html');
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('OTP sent to mobile! (Demo)');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
