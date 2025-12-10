@@ -71,19 +71,19 @@
             
             <!-- Additional Content Section -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; margin: 2rem auto; text-align: center;">
-                <div style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2);">
+                <div class="hero-feature-card" style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2); transition: all 0.3s;">
                     <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem;">⚡</div>
-                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Lightning Fast</h3>
+                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center; width: 100%; display: block;">Lightning Fast</h3>
                     <p style="color: #b0bec5; font-size: 0.9rem; margin: 0;">Same-day delivery available</p>
                 </div>
-                <div style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2);">
+                <div class="hero-feature-card" style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2); transition: all 0.3s;">
                     <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem;">🔒</div>
-                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Secure Payment</h3>
+                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center; width: 100%; display: block;">Secure Payment</h3>
                     <p style="color: #b0bec5; font-size: 0.9rem; margin: 0;">100% protected transactions</p>
                 </div>
-                <div style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2);">
+                <div class="hero-feature-card" style="padding: 1.5rem; background: rgba(45, 52, 54, 0.5); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2); transition: all 0.3s;">
                     <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem;">⭐</div>
-                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">Premium Quality</h3>
+                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center; width: 100%; display: block;">Premium Quality</h3>
                     <p style="color: #b0bec5; font-size: 0.9rem; margin: 0;">Authentic products only</p>
                 </div>
             </div>
@@ -116,36 +116,40 @@
         </div>
         <section class="container" style="padding: 4rem 0;">
             <div class="grid premium-grid" style="grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 1200px; margin: 0 auto;">
-                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
-                    <img src="VR Headset.png" style="height: 180px; margin: 0 auto 2rem; filter: drop-shadow(0 0 30px rgba(0,229,255,0.2));" alt="VR Headset">
-                    <h3>VR Experience</h3>
+                <div class="premium-card hero-premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%); opacity: 0; transition: opacity 0.5s; pointer-events: none;" class="card-glow"></div>
+                    <img src="VR Headset.png" style="height: 180px; margin: 0 auto 2rem; filter: drop-shadow(0 0 30px rgba(0,229,255,0.2)); transition: all 0.4s;" alt="VR Headset" class="premium-card-img">
+                    <h3 style="text-align: center; width: 100%; display: block;">VR Experience</h3>
                     <p style="color: #b0bec5;">Immerse yourself in virtual worlds with cutting-edge VR technology. From gaming to virtual tours, experience reality like never before.</p>
-                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600;">Explore VR →</a>
+                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600; transition: all 0.3s;">Explore VR →</a>
                 </div>
-                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
-                    <img src="Pro Gaming.png" style="height: 180px; margin: 0 auto 2rem;" alt="Gaming">
-                    <h3>Pro Gaming</h3>
+                <div class="premium-card hero-premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%); opacity: 0; transition: opacity 0.5s; pointer-events: none;" class="card-glow"></div>
+                    <img src="Pro Gaming.png" style="height: 180px; margin: 0 auto 2rem; transition: all 0.4s;" alt="Gaming" class="premium-card-img">
+                    <h3 style="text-align: center; width: 100%; display: block;">Pro Gaming</h3>
                     <p style="color: #b0bec5;">Consoles and accessories for the ultimate win. High-performance gear designed for competitive gamers and enthusiasts.</p>
-                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600;">Shop Gaming →</a>
+                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600; transition: all 0.3s;">Shop Gaming →</a>
                 </div>
-                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
-                    <img src="Aerial Tech.png" style="height: 180px; margin: 0 auto 2rem;" alt="Drones">
-                    <h3>Aerial Tech</h3>
+                <div class="premium-card hero-premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%); opacity: 0; transition: opacity 0.5s; pointer-events: none;" class="card-glow"></div>
+                    <img src="Aerial Tech.png" style="height: 180px; margin: 0 auto 2rem; transition: all 0.4s;" alt="Drones" class="premium-card-img">
+                    <h3 style="text-align: center; width: 100%; display: block;">Aerial Tech</h3>
                     <p style="color: #b0bec5;">Capture the world from 4K heights. Professional drones and aerial photography equipment for creators and professionals.</p>
-                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600;">View Drones →</a>
+                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600; transition: all 0.3s;">View Drones →</a>
                 </div>
-                <div class="premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s;">
-                    <img src="Smart Home.png" style="height: 180px; margin: 0 auto 2rem;" alt="Robotics">
-                    <h3>Smart Home</h3>
+                <div class="premium-card hero-premium-card" style="padding: 3rem; border-radius: 20px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%); opacity: 0; transition: opacity 0.5s; pointer-events: none;" class="card-glow"></div>
+                    <img src="Smart Home.png" style="height: 180px; margin: 0 auto 2rem; transition: all 0.4s;" alt="Robotics" class="premium-card-img">
+                    <h3 style="text-align: center; width: 100%; display: block;">Smart Home</h3>
                     <p style="color: #b0bec5;">Automation that simplifies your life. Transform your living space with intelligent devices and IoT solutions.</p>
-                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600;">Discover Smart Home →</a>
+                    <a href="services.html" style="color: var(--primary-color); margin-top: 1rem; display: inline-block; text-decoration: none; font-weight: 600; transition: all 0.3s;">Discover Smart Home →</a>
                 </div>
             </div>
         </section>
 
         <!-- Featured Products Section -->
         <section class="container" style="padding: 4rem 0; background: linear-gradient(135deg, #1a1c20 0%, #2d3436 100%); border-radius: 20px; margin: 3rem auto; max-width: 1200px;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem;">Featured Premium Products</h2>
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem; width: 100%; display: block;">Featured Premium Products</h2>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
                 <div class="premium-card" style="padding: 2rem; border-radius: 16px; text-align: center; background: #2d3436; border: 1px solid #444;">
                     <img src="MacBook Pro M2.png" style="height: 150px; margin: 0 auto 1.5rem; filter: drop-shadow(0 0 20px rgba(0,229,255,0.3));" alt="MacBook Pro">
@@ -173,26 +177,33 @@
 
         <!-- Benefits Section -->
         <section class="container" style="padding: 4rem 0;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem;">Why Shop With Us?</h2>
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem; width: 100%; display: block;">Why Shop With Us?</h2>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <div style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🚚</div>
-                    <h3 style="color: white; margin-bottom: 0.75rem;">Free Shipping</h3>
+                <div class="shop-benefit-card" style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
+                    <div class="icon-container icon-vehicle" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-color);">🚚</div>
+                    <h3 style="color: white; margin-bottom: 0.75rem; text-align: center; width: 100%; display: block;">Free Shipping</h3>
                     <p style="color: #b0bec5; margin: 0; font-size: 0.95rem;">Free delivery on orders above ₹999. Express shipping available for premium members.</p>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
-                    <h3 style="color: white; margin-bottom: 0.75rem;">Secure Payments</h3>
+                <div class="shop-benefit-card" style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
+                    <div class="icon-container icon-lock" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-color);">🔒</div>
+                    <h3 style="color: white; margin-bottom: 0.75rem; text-align: center; width: 100%; display: block;">Secure Payments</h3>
                     <p style="color: #b0bec5; margin: 0; font-size: 0.95rem;">100% secure transactions with multiple payment options. Your data is always protected.</p>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">↩️</div>
-                    <h3 style="color: white; margin-bottom: 0.75rem;">Easy Returns</h3>
+                <div class="shop-benefit-card" style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
+                    <div class="icon-container icon-return" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-color);">↩️</div>
+                    <h3 style="color: white; margin-bottom: 0.75rem; text-align: center; width: 100%; display: block;">Easy Returns</h3>
                     <p style="color: #b0bec5; margin: 0; font-size: 0.95rem;">30-day hassle-free return policy. We make returns simple and quick.</p>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
-                    <h3 style="color: white; margin-bottom: 0.75rem;">24/7 Support</h3>
+                <div class="shop-benefit-card" style="text-align: center; padding: 2rem; background: #2d3436; border-radius: 16px; border: 1px solid #444; transition: all 0.3s;">
+                    <div class="icon-message-container" style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary-color); position: relative; display: inline-block; width: 100%;">
+                        <span class="icon-message" style="display: inline-block;">💬</span>
+                        <div class="message-dots" style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; align-items: center; justify-content: center; width: 100%;">
+                            <span class="message-dot"></span>
+                            <span class="message-dot"></span>
+                            <span class="message-dot"></span>
+                        </div>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 0.75rem; text-align: center; width: 100%; display: block;">24/7 Support</h3>
                     <p style="color: #b0bec5; margin: 0; font-size: 0.95rem;">Round-the-clock customer support. Our team is always ready to help you.</p>
                 </div>
             </div>
@@ -200,7 +211,7 @@
 
         <!-- Testimonials Section -->
         <section class="container" style="padding: 4rem 0;">
-            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem;">What Our Customers Say</h2>
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white; font-size: 2.5rem; width: 100%; display: block;">What Our Customers Say</h2>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
                 <div style="padding: 2rem; background: #2d3436; border-radius: 16px; border-left: 4px solid var(--primary-color);">
                     <div style="color: var(--accent-yellow); margin-bottom: 1rem; font-size: 1.2rem;">★★★★★</div>

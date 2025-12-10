@@ -771,7 +771,7 @@ main > .container:first-child {
     margin-bottom: 0.75rem; 
     font-size: 0.95rem; 
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     align-items: flex-start;
 }
 .spec-item:last-child { border: none; margin: 0; padding: 0; }
@@ -2110,3 +2110,284 @@ body.dark-mode .dropdown-menu {
     background: var(--primary-color);
     color: white;
 }
+
+/* Animated Icons for Why Shop With Us Section */
+
+/* Vehicle Moving Animation */
+@keyframes vehicleMove {
+    0% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.icon-vehicle {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.icon-vehicle:hover {
+    animation: vehicleMove 1s ease-in-out infinite;
+}
+
+/* Lock Animation - Shake and Glow */
+@keyframes lockShake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes lockGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
+    }
+}
+
+.icon-lock {
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.icon-lock:hover {
+    animation: lockShake 0.5s ease-in-out infinite, lockGlow 1s ease-in-out infinite;
+}
+
+/* Return Arrow Animation - Rotate */
+@keyframes returnRotate {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    50% {
+        transform: rotate(180deg) translateX(5px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0);
+    }
+}
+
+.icon-return {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.icon-return:hover {
+    animation: returnRotate 1s ease-in-out infinite;
+}
+
+/* Typing Dots Animation - Improved Sequential Effect */
+@keyframes typingDot1 {
+    0% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    10% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    40% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes typingDot2 {
+    0% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    20% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    40% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes typingDot3 {
+    0% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    30% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1);
+    }
+    60% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.icon-message {
+    display: inline-block;
+    position: relative;
+}
+
+.message-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+.message-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+
+/* Animate dots on card hover - Sequential typing effect */
+.shop-benefit-card:hover .message-dot:nth-child(1) {
+    animation: typingDot1 1.5s ease-in-out infinite;
+}
+
+.shop-benefit-card:hover .message-dot:nth-child(2) {
+    animation: typingDot2 1.5s ease-in-out infinite;
+}
+
+.shop-benefit-card:hover .message-dot:nth-child(3) {
+    animation: typingDot3 1.5s ease-in-out infinite;
+}
+
+/* Enhanced Card Hover Effects for Hero Section */
+.hero-feature-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.hero-feature-card:hover::before {
+    opacity: 1;
+}
+
+.hero-feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 40px rgba(0, 229, 255, 0.3);
+}
+
+/* Why Shop With Us Card Effects */
+.shop-benefit-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-benefit-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.shop-benefit-card:hover::after {
+    left: 100%;
+}
+
+.shop-benefit-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25);
+}
+
+/* Icon Container Styling */
+.icon-container {
+    display: inline-block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.shop-benefit-card:hover .icon-container {
+    transform: scale(1.2);
+}
+
+/* Hero Premium Card Enhanced Effects */
+.hero-premium-card {
+    position: relative;
+}
+
+.hero-premium-card:hover .card-glow {
+    opacity: 1 !important;
+}
+
+.hero-premium-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 20px 50px rgba(0, 229, 255, 0.4) !important;
+}
+
+.hero-premium-card:hover .premium-card-img {
+    transform: scale(1.15) rotateY(5deg);
+    filter: drop-shadow(0 0 40px rgba(0, 229, 255, 0.5)) !important;
+}
+
+.hero-premium-card:hover a {
+    transform: translateX(5px);
+    color: var(--primary-hover) !important;
+}
+
+/* Headers are centered via inline styles for better control */
