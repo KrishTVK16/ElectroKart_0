@@ -536,4 +536,131 @@ document.addEventListener('DOMContentLoaded', () => {
     
     updateCartCount();
     renderCartPage();
+
+    /* --- Scroll Reveal Animation --- */
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.querySelectorAll('section, .product-card, .premium-card, .review-card, .stats-grid > div, .features-grid > div').forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
+
+    /* --- Parallax Effect for Hero Section --- */
+    const heroSection = document.querySelector('.hero-slider');
+    if (heroSection) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.5;
+            heroSection.style.transform = `translateY(${rate}px)`;
+        });
+    }
+
+    /* --- Counter Animation for Stats --- */
+    function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = formatNumber(target);
+                clearInterval(timer);
+            } else {
+                element.textContent = formatNumber(Math.floor(current));
+            }
+        }, 16);
+    }
+
+    function formatNumber(num) {
+        if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + 'M+';
+        } else if (num >= 1000) {
+            return (num / 1000).toFixed(0) + 'K+';
+        }
+        return num.toFixed(0) + '+';
+    }
+
+    // Animate stats when they come into view
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                entry.target.classList.add('animated');
+                const statText = entry.target.querySelector('h3');
+                if (statText) {
+                    const text = statText.textContent;
+                    const number = parseInt(text.replace(/[^0-9]/g, ''));
+                    if (!isNaN(number)) {
+                        statText.textContent = '0';
+                        animateCounter(statText, number);
+                    }
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stats-grid > div').forEach(stat => {
+        statsObserver.observe(stat);
+    });
+
+    /* --- Enhanced Hover Effects for Cards --- */
+    document.querySelectorAll('.product-card, .premium-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+    });
+
+    /* --- Smooth Scroll for Anchor Links --- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+    /* --- Typing Effect for Hero Text (Optional) --- */
+    const heroTitle = document.querySelector('.slide-content h1');
+    if (heroTitle && heroTitle.textContent.includes('UP TO')) {
+        const originalText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                heroTitle.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        };
+        // Only run if element is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeWriter();
+                    heroObserver.disconnect();
+                }
+            });
+        });
+        heroObserver.observe(heroTitle);
+    }
 });

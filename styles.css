@@ -502,6 +502,19 @@ header {
     color: #000;
 }
 
+/* Outline button with white border for dark backgrounds */
+.btn-outline[style*="border-color: rgba"] {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    background: transparent;
+}
+
+.btn-outline[style*="border-color: rgba"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
 input, textarea, select {
     border-radius: var(--border-radius-input);
     border: 1px solid var(--border-color);
@@ -1381,4 +1394,719 @@ body.dark-mode .auth-logo .logo-text-wrapper {
     .products-grid-container {
         width: 100%;
     }
+}
+
+/* Enhanced Visual Effects & Animations */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Apply fade-in to main sections */
+main > .container,
+main > section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Enhanced Product Card Hover Effects */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+}
+
+/* Premium Card Enhanced Hover */
+.premium-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 229, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.premium-card:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+}
+
+/* Button Enhanced Effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Stats Grid Animation */
+.stats-grid > div,
+.features-grid > div {
+    animation: scaleIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.stats-grid > div:nth-child(1) { animation-delay: 0.1s; }
+.stats-grid > div:nth-child(2) { animation-delay: 0.2s; }
+.stats-grid > div:nth-child(3) { animation-delay: 0.3s; }
+.stats-grid > div:nth-child(4) { animation-delay: 0.4s; }
+
+.features-grid > div:nth-child(1) { animation-delay: 0.1s; }
+.features-grid > div:nth-child(2) { animation-delay: 0.2s; }
+.features-grid > div:nth-child(3) { animation-delay: 0.3s; }
+.features-grid > div:nth-child(4) { animation-delay: 0.4s; }
+
+/* Review Cards Stagger Animation */
+.review-card {
+    animation: slideInLeft 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Category Items Enhanced Hover */
+.cat-item {
+    position: relative;
+}
+
+.cat-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+.cat-item:hover::after {
+    width: 80%;
+}
+
+.cat-item:hover .cat-img {
+    transform: scale(1.1) rotate(5deg);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* Hero Slider Enhanced */
+.slide-content h1 {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.slide-content p {
+    animation: fadeIn 1s ease-out;
+}
+
+.slide-content .btn {
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Brand Items Enhanced */
+.brands-container h3.brand-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.brands-container h3.brand-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.brands-container h3.brand-item:hover::before {
+    left: 100%;
+}
+
+/* Footer Links Enhanced */
+.footer-col ul li a {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-col ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.footer-col ul li a:hover::after {
+    width: 100%;
+}
+
+/* Form Input Enhanced */
+input:focus,
+textarea:focus,
+select:focus {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Stats Numbers Counter Animation */
+.stats-grid h3 {
+    transition: transform 0.3s;
+}
+
+.stats-grid > div:hover h3 {
+    transform: scale(1.1);
+    color: var(--primary-hover);
+}
+
+/* Section Headers Animation */
+h2 {
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.5s;
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+/* Image Hover Effects */
+.prod-img,
+.detail-img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .prod-img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Loading Skeleton Effect */
+@keyframes skeleton {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Nav Link Hover */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Card Tilt Effect */
+.product-card,
+.premium-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover,
+.premium-card:hover {
+    transform: perspective(1000px) rotateX(2deg) translateY(-5px);
+}
+
+/* Gradient Text Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Enhanced Icon Hover */
+.icon-btn,
+.theme-toggle,
+.mobile-menu-toggle {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.icon-btn:hover,
+.theme-toggle:hover,
+.mobile-menu-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Smooth Scroll Behavior Enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page Transition Effect */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: pageFadeIn 0.5s ease-out;
+}
+
+/* Additional Enhanced Effects */
+
+/* Stagger Animation for Grid Items */
+.card-grid .product-card:nth-child(1) { animation-delay: 0.1s; }
+.card-grid .product-card:nth-child(2) { animation-delay: 0.2s; }
+.card-grid .product-card:nth-child(3) { animation-delay: 0.3s; }
+.card-grid .product-card:nth-child(4) { animation-delay: 0.4s; }
+.card-grid .product-card:nth-child(5) { animation-delay: 0.5s; }
+.card-grid .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Enhanced Section Transitions */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Overlay on Hover for Sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.05), transparent);
+    transition: left 0.8s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+section:hover::before {
+    left: 100%;
+}
+
+/* Ensure content is above overlay */
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Enhanced Button Ripple Effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced Logo Animation */
+.logo {
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    transition: transform 0.3s;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(360deg);
+}
+
+/* Enhanced Search Bar */
+.search-bar {
+    position: relative;
+}
+
+.search-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.search-input:focus ~ .search-bar::after,
+.search-bar:hover::after {
+    width: 100%;
+}
+
+/* Enhanced Footer */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover), var(--primary-color));
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Enhanced Category Navigation */
+.category-nav {
+    position: relative;
+}
+
+.category-nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0.3;
+}
+
+/* Enhanced Stats Cards */
+.stats-grid > div,
+.features-grid > div {
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-grid > div::before,
+.features-grid > div::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.stats-grid > div:hover::before,
+.features-grid > div:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Review Cards */
+.review-card {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.1;
+    font-family: serif;
+    line-height: 1;
+}
+
+.review-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+}
+
+/* Enhanced Premium Cards on home-alt */
+.premium-card img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover img {
+    transform: scale(1.15) rotateY(5deg);
+    filter: drop-shadow(0 0 40px rgba(0, 229, 255, 0.4));
+}
+
+/* Enhanced Contact Form */
+input:focus,
+textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+}
+
+/* Smooth Page Transitions */
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+main {
+    animation: pageTransition 0.5s ease-out;
+}
+
+/* Enhanced Mobile Menu Animation */
+.nav-menu {
+    backdrop-filter: blur(10px);
+}
+
+/* Enhanced Cart Icon Animation */
+.icon-btn {
+    position: relative;
+}
+
+.icon-btn:hover {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Enhanced Dropdown Menu */
+.dropdown-menu {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .dropdown-menu {
+    background: rgba(34, 40, 49, 0.95);
+}
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Enhanced Loading States */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* Enhanced Focus States for Accessibility */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Enhanced Text Selection */
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: white;
 }
