@@ -1,18 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | ElectroKart</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="auth-page">
         <div style="margin-bottom: 2rem;">
             <a href="index.html" class="logo auth-logo">
-                <svg class="logo-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <svg class="logo-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
                 <div class="logo-text-wrapper">
                     ElectroKart
                     <span>Future Tech</span>
@@ -20,53 +25,84 @@
             </a>
         </div>
         <div class="auth-container" style="position: relative; z-index: 1;">
-            <div class="auth-banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="auth-banner"
+                style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div class="auth-banner-content" style="margin-bottom: 1rem;">
                     <h2 class="auth-title" style="text-align: center; width: 100%; display: block;">Login</h2>
-                    <p class="auth-subtitle" style="text-align: center;">Get access to your Orders, Wishlist and Recommendations</p>
+                    <p class="auth-subtitle" style="text-align: center;">Get access to your Orders, Wishlist and
+                        Recommendations</p>
                 </div>
-                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" class="auth-banner-img" style="max-width: 100%; max-height: 300px; object-fit: contain; display: block;">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png"
+                    alt="Login Graphic" class="auth-banner-img"
+                    style="max-width: 100%; max-height: 300px; object-fit: contain; display: block;">
             </div>
             <div class="auth-form-container">
                 <form id="loginForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div style="display: flex; flex-direction: column;">
                         <input type="email" placeholder="Enter Email/Mobile number" required>
                     </div>
-                    
+
                     <div style="display: flex; flex-direction: column;">
-                         <input type="password" placeholder="Enter Password" required>
-                         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
-                             <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555;">
-                                 <input type="checkbox" style="width: auto; margin: 0;"> Remember Me
-                             </label>
-                             <a href="#" style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 500;">Forgot Password?</a>
-                         </div>
+                        <input type="password" placeholder="Enter Password" required>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                            <label
+                                style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #555;">
+                                <input type="checkbox" style="width: auto; margin: 0;"> Remember Me
+                            </label>
+                            <a href="#" style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 500;">Forgot
+                                Password?</a>
+                        </div>
                     </div>
-                    
-                    <p style="font-size: 0.85rem; color: #878787; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.4;">By continuing, you agree to ElectroKart's Terms of Use and Privacy Policy.</p>
-                    
+
+                    <p
+                        style="font-size: 0.85rem; color: #878787; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.4;">
+                        By continuing, you agree to ElectroKart's Terms of Use and Privacy Policy.</p>
+
                     <div style="text-align: center;">
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
                     </div>
-                    
+
                     <div style="text-align: center; position: relative; margin: 1.5rem 0;">
                         <span style="background: white; padding: 0 1rem; color: #878787; font-size: 0.85rem;">OR</span>
-                        <hr style="position: absolute; top: 50%; left: 0; right: 0; margin: 0; border: none; border-top: 1px solid #e0e0e0; z-index: -1;">
+                        <hr
+                            style="position: absolute; top: 50%; left: 0; right: 0; margin: 0; border: none; border-top: 1px solid #e0e0e0; z-index: -1;">
                     </div>
-                    
+
                     <div class="social-buttons-container" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <button type="button" class="btn btn-white social-btn" style="flex: 1; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid #e0e0e0;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        <button type="button" class="btn btn-white social-btn"
+                            style="flex: 1; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid #e0e0e0;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="#4285F4" />
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                    fill="#FBBC05" />
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="#EA4335" />
+                            </svg>
                             Google
                         </button>
-                        <button type="button" class="btn btn-white social-btn" style="flex: 1; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid #e0e0e0;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>
+                        <button type="button" class="btn btn-white social-btn"
+                            style="flex: 1; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: var(--shadow-sm); border: 1px solid #e0e0e0;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                                    fill="#1877F2" />
+                            </svg>
                             Facebook
                         </button>
                     </div>
-                    
+
                     <div style="text-align: center; margin-top: 2rem;">
-                        <a href="register.html" style="color: var(--primary-dark); font-weight: 600; word-wrap: break-word; overflow-wrap: break-word; display: inline-block; max-width: 100%;">New to ElectroKart? Create an account</a>
+                        <span style="color: #555;">New to ElectroKart? </span><a href="register.html"
+                            style="color: var(--primary-dark); font-weight: 600; word-wrap: break-word; overflow-wrap: break-word;">Create
+                            an account</a>
                     </div>
                 </form>
             </div>
@@ -74,4 +110,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

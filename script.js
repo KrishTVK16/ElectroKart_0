@@ -1,6 +1,22 @@
 
+
+// Force page to always load at the top
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll to top immediately
+window.scrollTo(0, 0);
+
+// Also scroll to top when page is fully loaded
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // Also ensure scroll position is at top when DOM is ready
+    window.scrollTo(0, 0);
+
     /* --- Product Database --- */
     const productsDB = {
         "cam1": {
@@ -163,31 +179,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Populate Data
         document.title = `${product.title} | ElectroKart`;
-        
+
         const detailImg = document.querySelector('.detail-img');
-        if(detailImg) {
+        if (detailImg) {
             detailImg.src = product.img;
             detailImg.alt = product.title;
         }
 
         const titleEl = document.querySelector('.detail-info h1');
-        if(titleEl) titleEl.textContent = product.title;
+        if (titleEl) titleEl.textContent = product.title;
 
         const ratingEl = document.querySelector('.rating-badge');
-        if(ratingEl) ratingEl.textContent = product.rating;
+        if (ratingEl) ratingEl.textContent = product.rating;
 
         const priceEl = document.querySelector('.detail-price-lg');
-        if(priceEl) priceEl.textContent = product.price;
+        if (priceEl) priceEl.textContent = product.price;
 
         const originalPriceEl = document.querySelector('.detail-info span[style*="text-decoration"]');
-        if(originalPriceEl) originalPriceEl.textContent = product.originalPrice || '';
+        if (originalPriceEl) originalPriceEl.textContent = product.originalPrice || '';
 
         const discountEl = document.querySelector('.detail-info span[style*="color: var(--success-color)"]');
-        if(discountEl) discountEl.textContent = product.discount || '';
+        if (discountEl) discountEl.textContent = product.discount || '';
 
         // Update Add to Cart Button Data
         const addToCartBtn = document.querySelector('.add-to-cart-btn');
-        if(addToCartBtn) {
+        if (addToCartBtn) {
             addToCartBtn.dataset.id = productId || "iphone14";
             addToCartBtn.dataset.title = product.title;
             addToCartBtn.dataset.price = product.price;
@@ -196,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Specs
         const specsContainer = document.querySelector('.specs-list');
-        if(specsContainer && product.specs) {
+        if (specsContainer && product.specs) {
             let specsHtml = '';
             for (const [key, value] of Object.entries(product.specs)) {
                 specsHtml += `
@@ -236,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             navMenu.classList.toggle('active');
-            
+
             // Add/remove class to nav-container for CSS targeting
             if (navContainer) {
                 if (navMenu.classList.contains('active')) {
@@ -245,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     navContainer.classList.remove('menu-active');
                 }
             }
-            
+
             // Toggle icon or state if needed
             if (navMenu.classList.contains('active')) {
                 mobileToggle.textContent = '✕';
@@ -290,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileSearchBtn = document.querySelector('.mobile-search-toggle');
     const searchBar = document.querySelector('.search-bar');
     const searchInput = document.querySelector('.search-input');
-    
+
     if (mobileSearchBtn && searchBar) {
         mobileSearchBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -312,20 +328,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Search Functionality (Stub) --- */
     const searchIcon = document.querySelector('.search-icon');
-    
+
     function handleSearch() {
         const query = searchInput ? searchInput.value.trim() : '';
-        if(query) {
+        if (query) {
             alert(`Searching for: ${query}\n(This is a demo frontend)`);
         }
     }
 
-    if(searchIcon) {
+    if (searchIcon) {
         searchIcon.addEventListener('click', handleSearch);
     }
-    if(searchInput) {
+    if (searchInput) {
         searchInput.addEventListener('keypress', (e) => {
-            if(e.key === 'Enter') handleSearch();
+            if (e.key === 'Enter') handleSearch();
         });
     }
 
@@ -375,8 +391,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCartCount() {
         // Count total items including quantities
         const count = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
-        if(cartCountEl) cartCountEl.textContent = count;
-        
+        if (cartCountEl) cartCountEl.textContent = count;
+
         const headerCartCounts = document.querySelectorAll('.header-cart-count');
         headerCartCounts.forEach(el => el.textContent = count);
     }
@@ -391,13 +407,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartCount();
     }
 
-    window.addToCart = function(id, title, price, img) {
+    window.addToCart = function (id, title, price, img) {
         // Convert image to local path
         const localImg = getLocalImagePath(id, img);
-        
+
         // Check if item exists
         const existingItem = cart.find(item => item.id === id);
-        
+
         if (existingItem) {
             // Increment quantity if exists and update image if needed
             existingItem.quantity = (existingItem.quantity || 1) + 1;
@@ -408,16 +424,16 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.push({ id, title, price, img: localImg, quantity: 1 });
             alert('Item added to cart successfully!');
         }
-        
+
         saveCart();
     }
 
-    window.changeQuantity = function(id, change) {
+    window.changeQuantity = function (id, change) {
         const itemIndex = cart.findIndex(item => item.id === id);
         if (itemIndex > -1) {
             const item = cart[itemIndex];
             item.quantity = (item.quantity || 1) + change;
-            
+
             if (item.quantity <= 0) {
                 // Remove if quantity becomes 0
                 cart.splice(itemIndex, 1);
@@ -427,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.removeFromCart = function(id) {
+    window.removeFromCart = function (id) {
         cart = cart.filter(item => item.id !== id);
         saveCart();
         renderCartPage();
@@ -450,9 +466,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="services.html" class="btn btn-primary" style="margin-top: 1rem;">Shop Now</a>
                 </div>
             `;
-            if(totalItemsEl) totalItemsEl.textContent = '0';
-            if(totalPriceEl) totalPriceEl.textContent = '₹0';
-            if(finalPriceEl) finalPriceEl.textContent = '₹0';
+            if (totalItemsEl) totalItemsEl.textContent = '0';
+            if (totalPriceEl) totalPriceEl.textContent = '₹0';
+            if (finalPriceEl) finalPriceEl.textContent = '₹0';
             return;
         }
 
@@ -463,8 +479,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach(item => {
             const qty = item.quantity || 1;
             let priceNum = parseInt(item.price.replace(/[^0-9]/g, ''));
-            if(isNaN(priceNum)) priceNum = 0; 
-            
+            if (isNaN(priceNum)) priceNum = 0;
+
             total += priceNum * qty;
             totalQty += qty;
 
@@ -491,16 +507,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cartContainer.innerHTML = html;
-        if(totalItemsEl) totalItemsEl.textContent = totalQty;
-        if(totalPriceEl) totalPriceEl.textContent = '₹' + total.toLocaleString('en-IN');
-        if(finalPriceEl) finalPriceEl.textContent = '₹' + total.toLocaleString('en-IN');
+        if (totalItemsEl) totalItemsEl.textContent = totalQty;
+        if (totalPriceEl) totalPriceEl.textContent = '₹' + total.toLocaleString('en-IN');
+        if (finalPriceEl) finalPriceEl.textContent = '₹' + total.toLocaleString('en-IN');
     }
 
     /* --- Attach Click Listeners to Add to Cart Buttons --- */
     const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.preventDefault(); 
+            e.preventDefault();
             const id = btn.dataset.id;
             const title = btn.dataset.title;
             const price = btn.dataset.price;
@@ -512,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- Filter Toggle Button --- */
     const filterToggleBtn = document.querySelector('.filter-toggle-btn');
     const filtersSidebar = document.getElementById('filtersSidebar');
-    
+
     if (filterToggleBtn && filtersSidebar) {
         filterToggleBtn.addEventListener('click', () => {
             filtersSidebar.classList.toggle('active');
@@ -533,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
         saveCart();
     }
-    
+
     updateCartCount();
     renderCartPage();
 
@@ -557,15 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    /* --- Parallax Effect for Hero Section --- */
-    const heroSection = document.querySelector('.hero-slider');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.5;
-            heroSection.style.transform = `translateY(${rate}px)`;
-        });
-    }
+
 
     /* --- Counter Animation for Stats --- */
     function animateCounter(element, target, duration = 2000) {
@@ -617,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- Enhanced Hover Effects for Cards --- */
     document.querySelectorAll('.product-card, .premium-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         });
     });
