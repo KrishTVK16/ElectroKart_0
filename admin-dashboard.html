@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | ElectroKart</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300e5ff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+
+<body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+                <div class="logo-text-wrapper">
+                    ElectroKart
+                    <span id="dashboardType">Admin Dashboard</span>
+                </div>
+            </a>
+            <div class="dashboard-header-actions">
+                <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">◑</button>
+                <button type="button" class="swap-btn" id="swapBtn" title="Switch to User Dashboard">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                        <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/>
+                    </svg>
+                    <span>User</span>
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar">AD</div>
+                    <span class="user-name">Admin</span>
+                </div>
+                <button type="button" class="logout-btn" id="logoutBtn" title="Logout">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                        <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="dashboard-welcome">
+                <h1>Admin Command Center</h1>
+                <p>Manage your store, track performance, and monitor operations.</p>
+            </section>
+
+            <!-- Stats Grid - Admin Specific -->
+            <section class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon revenue">₹</div>
+                    <div class="stat-content">
+                        <h3>Total Revenue</h3>
+                        <p class="stat-value" data-target="3240000">₹0</p>
+                        <span class="stat-change positive">+12.5% from last month</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon customers">👥</div>
+                    <div class="stat-content">
+                        <h3>Active Customers</h3>
+                        <p class="stat-value" data-target="12480">0</p>
+                        <span class="stat-change positive">+245 this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon conversion">📊</div>
+                    <div class="stat-content">
+                        <h3>Conversion Rate</h3>
+                        <p class="stat-value" data-target="3.8">0</p>
+                        <span class="stat-change">%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon aov">💵</div>
+                    <div class="stat-content">
+                        <h3>Avg Order Value</h3>
+                        <p class="stat-value" data-target="2590">₹0</p>
+                        <span class="stat-change positive">+5.2%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon views">👁️</div>
+                    <div class="stat-content">
+                        <h3>Product Views</h3>
+                        <p class="stat-value" data-target="45620">0</p>
+                        <span class="stat-change positive">+1,240 today</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon rating">⭐</div>
+                    <div class="stat-content">
+                        <h3>Satisfaction Score</h3>
+                        <p class="stat-value" data-target="4.6">0</p>
+                        <span class="stat-change">/ 5.0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order Pipeline -->
+            <section class="dashboard-pipeline">
+                <h2>Order Management Pipeline</h2>
+                <div class="pipeline-container">
+                    <div class="pipeline-stage">
+                        <div class="stage-header">
+                            <h3>Pending</h3>
+                            <span class="stage-count">24</span>
+                        </div>
+                        <div class="stage-arrow">→</div>
+                    </div>
+                    <div class="pipeline-stage">
+                        <div class="stage-header">
+                            <h3>Processing</h3>
+                            <span class="stage-count">18</span>
+                        </div>
+                        <div class="stage-arrow">→</div>
+                    </div>
+                    <div class="pipeline-stage">
+                        <div class="stage-header">
+                            <h3>Shipped</h3>
+                            <span class="stage-count">42</span>
+                        </div>
+                        <div class="stage-arrow">→</div>
+                    </div>
+                    <div class="pipeline-stage">
+                        <div class="stage-header">
+                            <h3>Delivered</h3>
+                            <span class="stage-count">156</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory Alerts -->
+            <section class="dashboard-inventory">
+                <h2>Inventory Status</h2>
+                <div class="inventory-alerts">
+                    <div class="alert-card critical">
+                        <div class="alert-icon">⚠️</div>
+                        <div class="alert-content">
+                            <h3>Critical Stock</h3>
+                            <p class="alert-count">8 items</p>
+                            <span class="alert-action">Restock Now</span>
+                        </div>
+                    </div>
+                    <div class="alert-card warning">
+                        <div class="alert-icon">📉</div>
+                        <div class="alert-content">
+                            <h3>Low Stock</h3>
+                            <p class="alert-count">24 items</p>
+                            <span class="alert-action">Review</span>
+                        </div>
+                    </div>
+                    <div class="alert-card ok">
+                        <div class="alert-icon">✓</div>
+                        <div class="alert-content">
+                            <h3>In Stock</h3>
+                            <p class="alert-count">156 items</p>
+                            <span class="alert-action">View All</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Actions -->
+            <section class="dashboard-actions">
+                <h2>Admin Actions</h2>
+                <div class="action-buttons">
+                    <a href="services.html" class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <span>Manage Products</span>
+                    </a>
+                    <a href="#" class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span>View All Orders</span>
+                    </a>
+                    <a href="#" class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        <span>Manage Users</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- System Health -->
+            <section class="dashboard-health">
+                <h2>System Health</h2>
+                <div class="health-grid">
+                    <div class="health-card">
+                        <div class="health-status online"></div>
+                        <div class="health-content">
+                            <h3>Server Status</h3>
+                            <p>Online</p>
+                            <span class="health-metric">99.9% Uptime</span>
+                        </div>
+                    </div>
+                    <div class="health-card">
+                        <div class="health-status good"></div>
+                        <div class="health-content">
+                            <h3>API Response</h3>
+                            <p>142ms</p>
+                            <span class="health-metric">Average</span>
+                        </div>
+                    </div>
+                    <div class="health-card">
+                        <div class="health-status good"></div>
+                        <div class="health-content">
+                            <h3>Error Rate</h3>
+                            <p>0.02%</p>
+                            <span class="health-metric">Very Low</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Activity -->
+            <section class="dashboard-activity">
+                <h2>System Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">✓</div>
+                        <div class="activity-content">
+                            <p><strong>Order #12345</strong> has been completed</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📦</div>
+                        <div class="activity-content">
+                            <p><strong>18 new orders</strong> received today</p>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">👥</div>
+                        <div class="activity-content">
+                            <p><strong>245 new customers</strong> registered this week</p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">📱</div>
+                        <div class="activity-content">
+                            <p>New product category added</p>
+                            <span class="activity-time">2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="dashboard-scripts.js"></script>
+</body>
+
+</html>
+
