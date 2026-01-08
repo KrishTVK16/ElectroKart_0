@@ -47,17 +47,20 @@
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="dashboard.html" class="dashboard-btn" title="Dashboard">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
                     </svg>
                     <span>Dashboard</span>
                 </a>
                 <a href="login.html" class="nav-btn btn-white">Login</a>
                 <a href="register.html" class="nav-btn btn-primary-sm">Sign Up</a>
             </nav>
-            <!--<a href="cart.html" class="icon-btn" title="Cart">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <a href="cart.html" class="icon-btn" title="Cart">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                </svg>
                 <span id="cart-count" class="header-cart-count">0</span>
-            </a>-->
+            </a>
             <div class="mobile-buttons-group">
                 <button class="mobile-search-toggle">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -84,19 +87,20 @@
             <div class="hero-slider">
                 <div class="slide">
                     <div class="slide-content">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
-                            <!--<svg class="logo-icon" viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: var(--primary-color);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>-->
+                        <div class="hero-text">
+                            <h1>NEXT GEN TECH <br> IS HERE</h1>
+                            <p>Discover the future of electronics with our premium collection of smart devices,
+                                high-performance computing, and immersive entertainment systems.</p>
+                            <div style="display: flex; gap: 1rem; justify-content: center;">
+                                <a href="services.html" class="btn btn-primary">Shop Collection</a>
+                                <a href="#features" class="btn btn-outline"
+                                    style="border-color: rgba(255,255,255,0.3); color: white;">Why Choose Us</a>
+                            </div>
                         </div>
-                        <h2>Future Tech Sale</h2>
-                        <h1>UP TO 60% OFF</h1>
-                        <p>Experience the next generation of smart devices today.</p>
-                        <!-- Centered button -->
-                        <div style="text-align: center;">
-                            <a href="services.html" class="btn btn-primary">Shop Now</a>
+                        <div class="hero-image-container">
+                            <img src="hero_device.png" alt="Next Gen Tech Device" class="hero-img">
                         </div>
                     </div>
-                    <img src="https://www.pngall.com/wp-content/uploads/13/iPhone-14-PNG-Cutout.png" alt="iPhone">
                 </div>
             </div>
         </div>
@@ -104,40 +108,108 @@
         <!-- Category Strip -->
         <div class="category-nav" style="display: flex; align-items: center;">
             <div class="container category-list"
-                style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); display: grid; gap: 2rem;">
+                style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); display: grid; gap: 1.5rem;">
                 <a href="services.html" class="cat-item">
-                    <img src="https://img.icons8.com/color/96/iphone.png" alt="Mobiles" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Mobiles</span>
                 </a>
                 <a href="services.html" class="cat-item">
-                    <img src="https://img.icons8.com/color/96/laptop.png" alt="Laptops" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Computing</span>
                 </a>
                 <a href="services.html" class="cat-item">
-                    <img src="https://img.icons8.com/color/96/tv.png" alt="TVs" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Entertainment</span>
                 </a>
                 <a href="services.html" class="cat-item">
-                    <img src="https://img.icons8.com/color/96/headphones.png" alt="Audio" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Audio</span>
                 </a>
                 <a href="services.html" class="cat-item">
-                    <img src="https://img.icons8.com/color/96/camera.png" alt="Cameras" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Cameras</span>
                 </a>
                 <a href="services.html" class="cat-item">
-                    <img src="game-controller.png" alt="Gaming" class="cat-img">
+                    <div class="cat-img">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S19.17 9 20 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                        </svg>
+                    </div>
                     <span class="cat-name">Gaming</span>
                 </a>
             </div>
         </div>
 
+        <!-- Features Section -->
+        <section id="features" class="section container">
+            <h2>Why Choose ElectroKart</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 8h-3V4H3v16h17v-4h3V8zM5 6h10v2H5V6zm10 12H5v-2h10v2zm0-4H5v-2h10v2zm5 4h-3v-4h3v4z" />
+                        </svg>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your gadgets delivered within 24 hours in select cities with our express logistics network.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h3>Official Warranty</h3>
+                    <p>All products come with manufacturer warranty and our 30-day hassle-free return policy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z" />
+                        </svg>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our expert tech support team is available round the clock to assist you with any queries.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Best of Electronics -->
         <section class="section container">
-            <div class="flex justify-between items-center" style="margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
-                <h2 style="text-align: center; width: 100%; display: block; margin: 0 auto;">Trending Now</h2>
-                <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem; margin: 0 auto;">View
-                    All</a>
+            <!-- Centered Heading with Button Below -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2>Trending Now</h2>
+                <a href="services.html" class="btn btn-outline" style="padding: 0.5rem 1.5rem;">View All</a>
             </div>
 
             <div class="card-grid">
@@ -225,8 +297,7 @@
 
         <!-- Brands Section -->
         <section class="section container">
-            <h2 class="text-center" style="margin-bottom: 2rem; text-align: center; width: 100%; display: block;">Top
-                Brands</h2>
+            <h2>Top Brands</h2>
             <div class="bg-white brands-container"
                 style="padding: 2rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; border-radius: 16px; box-shadow: var(--shadow-sm); align-items: center;">
                 <h3 class="brand-item">SAMSUNG</h3>
@@ -235,6 +306,65 @@
                 <h3 class="brand-item">Canon</h3>
                 <h3 class="brand-item">Xiaomi</h3>
                 <h3 class="brand-item">DELL</h3>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section container">
+            <h2>Customer Reviews</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-user">
+                        <div class="user-avatar">JD</div>
+                        <div>
+                            <h4>John Doe</h4>
+                            <p style="margin:0; font-size:0.85rem; color:var(--text-light);">Tech Enthusiast</p>
+                        </div>
+                    </div>
+                    <p>“The delivery was incredibly fast, and the MacBook M2 is a beast. ElectroKart is my go-to for all
+                        tech needs now.”</p>
+                    <div style="color:var(--accent-yellow); font-size:1.2rem;">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-user">
+                        <div class="user-avatar">SL</div>
+                        <div>
+                            <h4>Sarah Lee</h4>
+                            <p style="margin:0; font-size:0.85rem; color:var(--text-light);">Designer</p>
+                        </div>
+                    </div>
+                    <p>“Loved the wide range of accessories. Got my Sony headphones at a great price. Highly
+                        recommended!”</p>
+                    <div style="color:var(--accent-yellow); font-size:1.2rem;">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-user">
+                        <div class="user-avatar">MK</div>
+                        <div>
+                            <h4>Mike K.</h4>
+                            <p style="margin:0; font-size:0.85rem; color:var(--text-light);">Gamer</p>
+                        </div>
+                    </div>
+                    <p>“Gaming collection matches international standards. The checkout process was smooth and secure.”
+                    </p>
+                    <div style="color:var(--accent-yellow); font-size:1.2rem;">★★★★☆</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section container">
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h2 style="color: white; margin-bottom: 1rem;">Stay Ahead of the Curve</h2>
+                    <p style="color: rgba(255,255,255,0.8);">Subscribe to our newsletter for exclusive deals, new
+                        launches, and tech tips directly to your inbox.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary"
+                            style="padding: 1rem 2.5rem; border-radius: 50px;">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </section>
 
