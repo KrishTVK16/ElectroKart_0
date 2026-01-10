@@ -714,10 +714,33 @@ main>.container:first-child {
 }
 
 .category-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
     justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .category-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .cat-item {
+        gap: 0.5rem;
+    }
+
+    .cat-img {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+
+    .cat-name {
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }
 
 .cat-item {
@@ -825,6 +848,14 @@ main>.container:first-child {
     /* Ensure buttons are centered */
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .hero-image-container {
     flex: 1;
     display: flex;
@@ -874,23 +905,85 @@ main>.container:first-child {
 
 /* Mobile Responsive Hero */
 @media (max-width: 900px) {
+    .hero-slider {
+        height: auto;
+        min-height: auto;
+        padding: 6rem 0 2rem;
+        /* Add top padding to clear fixed header */
+    }
+
     .slide-content {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding-top: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .slide {
-        padding: 4rem 1rem;
+        padding: 1rem;
+        height: auto;
+        overflow: hidden;
+        /* Prevent spill */
     }
 
     .slide-content p {
         margin-left: auto;
         margin-right: auto;
+        font-size: 1rem;
+        /* Smaller font */
+        max-width: 100%;
+        padding: 0 1rem;
+        /* Ensure inside padding */
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
     }
 
     .hero-text div {
         justify-content: center;
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        /* Constrain button width */
+        margin: 0 auto;
+    }
+
+    .slide-content h1 {
+        font-size: 2rem;
+        word-wrap: break-word;
+        /* Prevent text overflow */
+    }
+
+    .hero-img {
+        max-height: 220px;
+        margin-bottom: 0.5rem;
+        max-width: 80%;
+        /* Don't be too wide */
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-slider {
+        min-height: 500px;
     }
 }
 

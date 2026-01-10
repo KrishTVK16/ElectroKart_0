@@ -158,6 +158,10 @@
 .dashboard-welcome {
     margin-bottom: 2rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center children horizontally */
 }
 
 .welcome-content {
@@ -201,8 +205,13 @@
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .user-avatar-large {
@@ -235,8 +244,15 @@
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* Stats Grid */
@@ -973,6 +989,7 @@ body.dark-mode .activity-content p {
     .health-grid {
         grid-template-columns: 1fr;
     }
+
     .dashboard-main {
         padding: 1.5rem 0;
     }
@@ -1105,6 +1122,7 @@ body.dark-mode .activity-content p {
         font-size: 1rem;
         padding: 0.4rem 0.8rem;
     }
+
     .dashboard-header .nav-container {
         flex-wrap: nowrap;
         overflow: hidden;
@@ -1352,4 +1370,3 @@ body {
     max-width: 100%;
     box-sizing: border-box;
 }
-
